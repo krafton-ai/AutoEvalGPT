@@ -1,0 +1,82 @@
+[
+    {
+        "task":"Translate the text into Korean.",
+        "inputs":[
+            "Israel on Thursday expressed disappointment at the decision of U.S. President Donald Trump to sign a waiver to delay relocating the U.S. Embassy in Israel to Jerusalem from Tel Aviv but said it hoped a move could take place later.",
+            "Hey! I have some Kissflow Legal Review requests that are blocked by Tax and Accounting, can this be looked at?",
+            "The competition between coding assistants is heating up: CodeWhisperer, the assistant developed by Amazon, is now free for individual developers. As a comparison, GitHub Copilot starts at 10$ per month.\nWhile CodeWhisperer can give recommendations in 15 programming languages and is usually better than the competition when writing code related to Amazon technologies, Copilot covers a wider range of languages, including FORTRAN, and is intended as a more general-purpose coding assistant.\nCheck here to know more about CodeWhisperer.",
+            "Neural Radiance Field (NeRF) is a method for synthesizing photo-realistic 3D models of world scenes from 2D images or videos. Researchers at Berkeley University recently presented Instruct-NeRF2NeRF, an approach for editing 3D scenes using language instructions alone. The functioning of Instruct-NeRF2NeRF is based on InstructPix2Pix, a technique for editing images using Stable Diffusion. The Instruct-NeRF2NeRF project page is available here.",
+            "It can create a variety of looks for anyone, from early explorers and bare makeup to trendy decadent beauties, from minimalists to maximalists."
+        ],
+        "GPT-4":[
+            "목요일 이스라엘은 미국 대통령 도널드 트럼프가 텔아비브에서 예루살렘으로 이스라엘 미국 대사관 이전을 지연시키기 위해 면제 서명을 하는 결정에 실망감을 표현했지만, 나중에 이동이 이루어질 수 있기를 희망한다고 말했습니다.",
+            "헤이! 제가 Tax and Accounting에 의해 차단된 몇 가지 Kissflow 법률 검토 요청이 있는데, 이것을 확인해 주실 수 있나요?",
+            "코딩 보조 도구 간의 경쟁이 치열해지고 있습니다: 아마존이 개발한 CodeWhisperer는 이제 개별 개발자들에게 무료로 제공됩니다. 비교적으로, GitHub Copilot은 월 10달러부터 시작합니다.\nCodeWhisperer는 15개의 프로그래밍 언어에서 추천을 제공할 수 있으며, 아마존 기술과 관련된 코드 작성 시 경쟁보다 더 우수한 성능을 발휘하지만, Copilot은 FORTRAN을 포함한 더 넓은 범위의 언어를 다루며, 더 일반적인 목적의 코딩 보조 도구로 의도되어 있습니다.\nCodeWhisperer에 대해 더 알아보려면 여기를 확인하세요.",
+            "신경 방사선 필드(NeRF)는 2D 이미지 또는 비디오에서 사실적인 3D 세계 장면 모델을 합성하는 방법입니다. 버클리 대학의 연구자들은 최근 언어 지시문만을 사용하여 3D 장면을 편집하는 Instruct-NeRF2NeRF라는 접근법을 제시했습니다. Instruct-NeRF2NeRF의 작동 원리는 안정적인 확산을 사용하여 이미지를 편집하는 기술인 InstructPix2Pix에 기반합니다. Instruct-NeRF2NeRF 프로젝트 페이지는 여기에서 확인할 수 있습니다.",
+            "그것은 초기 탐험가와 베어 메이크업부터 트렌디한 화려한 미인, 미니멀리스트부터 맥시멀리스트까지 누구에게나 다양한 외모를 연출할 수 있습니다."
+        ],
+        "model":[
+            {
+                "name":"DeepL",
+                "outputs":[
+                    "이스라엘은 목요일 도널드 트럼프 미국 대통령이 이스라엘 주재 미국 대사관을 텔아비브에서 예루살렘으로 이전하는 것을 연기하는 면제에 서명하기로 한 결정에 대해 유감을 표명했지만 나중에 이전이 이루어질 수 있기를 희망한다고 밝혔다.",
+                    "안녕하세요! 세무 및 회계에서 차단된 Kissflow 법률 검토 요청이 몇 개 있는데요, 이 요청을 살펴볼 수 있나요?",
+                    "코딩 어시스턴트 간의 경쟁이 뜨거워지고 있습니다: Amazon에서 개발한 코딩 어시스턴트인 CodeWhisperer는 이제 개인 개발자에게 무료로 제공됩니다. 이에 비해 GitHub Copilot은 한 달에 10달러부터 시작합니다.\nCodeWhisperer는 15개 프로그래밍 언어로 추천을 제공할 수 있으며 일반적으로 Amazon 기술과 관련된 코드를 작성할 때 경쟁사보다 우수하지만, Copilot은 FORTRAN을 포함하여 더 넓은 범위의 언어를 지원하며 보다 범용적인 코딩 도우미로 고안되었습니다.\n코드위스퍼러에 대해 자세히 알아보려면 여기를 확인하세요.",
+                    "신경 방사 필드(NeRF)는 2D 이미지 또는 비디오에서 세계 장면의 사실적인 3D 모델을 합성하는 방법입니다. 최근 버클리 대학교의 연구원들은 언어 명령어만으로 3D 장면을 편집할 수 있는 접근 방식인 Instruct-NeRF2NeRF를 발표했습니다. Instruct-NeRF2NeRF의 기능은 안정적 확산을 사용하여 이미지를 편집하는 기술인 InstructPix2Pix를 기반으로 합니다. Instruct-NeRF2NeRF 프로젝트 페이지는 여기에서 확인할 수 있습니다.",
+                    "초기 탐험가와 민낯 메이크업부터 트렌디한 데카당스 뷰티, 미니멀리스트부터 맥시멀리스트까지 누구나 다양한 룩을 연출할 수 있습니다."
+                ]
+            },
+            {
+                "name":"ChatGPT3.5",
+                "outputs":[
+                    "이스라엘은 목요일 미국 대통령 도널드 트럼프가 이스라엘의 대사관을 텔아비브에서 예루살렘으로 이전하는 것을 연기하기 위해 면제서에 서명한 결정에 실망을 표명했지만, 나중에 이사가 가능할 것을 희망한다고 밝혔습니다.",
+                    "안녕하세요! 세무 및 회계 부서에서 차단된 몇 가지 Kissflow Legal Review 요청이 있습니다. 확인해 주실 수 있나요?",
+                    "코딩 어시스턴트 간 경쟁이 치열해지고 있습니다: 아마존에서 개발한 어시스턴트인 CodeWhisperer가 이제 개인 개발자를 위해 무료로 제공됩니다. 비교적으로, GitHub Copilot은 월 10달러부터 시작합니다.\nCodeWhisperer는 15개의 프로그래밍 언어에서 권장 사항을 제공할 수 있으며, 아마존 기술과 관련된 코드 작성에 대해 경쟁 상대보다 일반적으로 더 나은 성능을 보입니다. Copilot은 FORTRAN을 포함한 더 넓은 범위의 언어를 다루며, 보다 일반적인 용도의 코딩 어시스턴트로서 의도되었습니다.\nCodeWhisperer에 대해 더 알아보려면 여기를 클릭하세요.",
+                    "Neural Radiance Field (NeRF)은 2D 이미지나 비디오에서 세계 장면의 사진적으로 현실적인 3D 모델을 합성하는 방법입니다. 버클리 대학의 연구자들은 최근 언어 지시만으로 3D 장면을 편집하는 Instruct-NeRF2NeRF를 제시했습니다. Instruct-NeRF2NeRF의 작동 방식은 Stable Diffusion을 사용하여 이미지를 편집하는 InstructPix2Pix에 기반합니다. Instruct-NeRF2NeRF 프로젝트 페이지는 여기에서 확인할 수 있습니다.",
+                    "누구에게나 다양한 룩을 만들어 줄 수 있습니다. 초기 탐험가나 베어 메이크업부터 트렌디한 호화로운 미인, 미니멀리스트부터 맥시멀리스트까지."
+                ]
+            },
+            {
+                "name":"Vicuna-13B",
+                "outputs":[
+                    "이스라엘은 주요 보고서에 기꺼이 분노하여 트럼프 대통령이 지정한 국가의 대통령이라는 자신을 인정하지 못하고 그룹의 선언문을 체포하고 싶다고 밝혔습니다.",
+                    "안녕하세요! 세금계산과 회계부서가 차단해 있는 Kissflow Legal Review 요청이 몇 개가 있습니까? 이것을 살펴보시겠습니까?",
+                    "코드웨이스표는 개인 개발자에게는 무료로 제공되고 있습니다. 기존 비교 가능하게 한 번 보여드리겠습니다. 번역결과CodeWhisperer, an assistant developed by Amazon, is now free for individual developers. As a comparison, GitHub Copilot starts at $10 per month.\nWhile CodeWhisperer can give recommendations in 15 programming languages ​​and is usually better than the competition when writing code related to Amazon technologies, Copilot covers a wider range of languages, including FORTRAN, and is intended as a more general-purpose coding assistant.\nCheck here to know more about CodeWhisperer.",
+                    "영지식 추출(NeRF)은 2D 이미지나 비디오에서 세계 장면의 실제 3D 모델을 시뮬레이션하는 방법입니다. 최근 벤처 연구원들은 인스트럭스(Instruct)를 사용하여 3D 장면을 편집할 수 있는 접근 방식인 Instruct-NeRF2NeRF을 제안했습니다. Instruct-NeRF2NeRF의 기능은 InstructPix2Pix, 스탠버 밀증 방식을 사용한 이미지 편집 기법의 작동 기법에 기반을 둡니다. Instruct-NeRF2NeRF 프로젝트 페이지는 여기에 있습니다.",
+                    "모든 사람에게 다양한 풍경을 만들 수 있습니다. 초보자와 피부에 대해 가벼운 메이크업부터 트렌디한 데코버스 아름다움까지 이러한 모든 타입과 모든 스타일을 다루도록 합니다."
+                ]
+            },
+            {
+                "name":"Korani-v2",
+                "outputs":[
+                    "이스라엘은 요일 미국 대통령 도널드 트럼프가 제안한 것으로 보이는 지중해에서 유대인 주민들을 위해 미국 영사관을 예정된 기간을 연장하지 않기로 결정한 것에 실망했지만, 이후 이루어질 수 있다는 희망을 표명했습니다.",
+                    "안녕하세요! 제가 Kissflow Legal Review 요청을 목격했는데, 세무 및 회계 부서에서 차단하고 있는데 이 문제를 조사해 주시겠어요?",
+                    "코드 조용한 도우미, 아마존에서 개발한 지원 코드 조용한 도우미가 이제 개인 개발자에게 무료로 제공되고 있습니다. 코드 왓실퍼와 비교할 때, GitHub Copilot는 월 $10부터 시작합니다.\n코드 왓실퍼는 아마존 기술에 대한 코드 작성을 위해 경쟁사보다 일반적으로 우월하지만, 코드 왓실퍼는 15개의 프로그래밍 언어를 지원하고 일반 목적 코드 조용한 도우미보다 더 넓은 범위를 다루기 때문에 더 광범위한 언어를 지원하고 있습니다. 여기에서 코드 왓실퍼에 대해 자세히 알아보세요.",
+                    "신경 빛 필드(NeRF)는 2D 이미지 또는 비디오에서 세계 장면을 사실적인 3D 모델로 합성하기 위한 방법입니다. 버클리 대학교의 연구원들은 언어 명령만으로 3D 장면을 편집할 수 있는 Instruct-NeRF2NeRF라는 접근법을 제안했습니다. 이 접근법은 InstructPix2Pix 기술을 사용하여 이미지를 편집하는 Stable Diffusion의 개념을 기반으로 합니다. Instruct-NeRF2NeRF 프로젝트 페이지는 여기에서 확인할 수 있습니다.",
+                    "모든 사람에게 다양한 미학을 만들 수 있는 제품이라 보입니다. 탐험가와 기본 메이크업부터 트렌디하고 과도한 아름다움까지, 최소한의 메이크업과 최대의 메이크업까지"
+                ]
+            },
+            {
+                "name":"Korani-v1",
+                "outputs":[
+                    "이스라엘은 목요일 미국 대통령 도널드 트럼프가 예루살렘에 있는 미국 대사관을 텔아비브에서 예루살렘으로 이전하는 것을 연기하기로 한 결정에 대해 실망을 표명했지만, 향후 이전이 이루어질 것으로 기대한다고 말했습니다.",
+                    "안녕하세요! 세금과 회계로 인해 막혀 있는 키스플로우 법률 검토 요청이 몇 개 있는데, 검토해 주실 수 있나요?",
+                    "코딩 어시스턴트 간의 경쟁이 치열해지고 있습니다: Amazon이 개발한 어시스턴트인 CodeWhisperer는 이제 개인 개발자에게 무료로 제공됩니다. GitHub Copilot은 월 10달러에 이용할 수 있습니다. CodeWhisperer는 15개 프로그래밍 언어에 대한 추천을 제공할 수 있으며, 일반적으로 Amazon 기술과 관련된 코드에 대해 경쟁업체보다 더 나은 성능을 발휘하는 경우가 많습니다. Copilot은 FORTRAN을 포함한 광범위한 언어를 다루며 보다 일반적인 코드 작업을 돕는 데 목적이 있습니다. 여기에서 CodeWhisperer에 대해 자세히 알아보세요.",
+                    "신경 방사 필드 (NeRF)는 2D 이미지 또는 동영상에서 세계 장면의 3D 생성적 사실적인 이미지를 합성하는 방법입니다. 버클리 대학교의 연구원들은 최근 Instruct-NeRF2Instruct-NeRF2의 기능을 언어 지시만으로 3D 장면을 편집하는 접근 방식인 InstructPix2Pix와 통합하여 Instruct-NeRF2를 발표했습니다. Instruct-NeRF2 프로젝트 페이지는 여기에서 이용할 수 있습니다.",
+                    "미니멀리스트부터 맥시멀리스트까지 다양한 룩을 연출할 수 있으며, 이른 탐험가부터 메이크업까지 다양한 룩을 연출할 수 있습니다."
+                ]
+            },
+            {
+                "name":"Koalpaca-13B",
+                "outputs":[
+                    "이스라엘은 미국 대통령 도널드 트럼프이 예루살렘을 이스라엘의 수도로 인정한 결정에 대해 실망을 표명하며, 추후에 대사관 이전을 희망한다고 표명했다.",
+                    "야! 세금과 회계에 막힌 키싱플로우 법적 검토 요청이 있는데, 이거 검토해줄 수 있어?",
+                    "프로그래밍 도우미사이의 경쟁이 치열해지고 있습니다. Amazon의 보조 개발자인 CodeWhisperer가 개인 개발자에게는 무료로 제공됩니다. GitHub Copilot는 월 10달러의 비용이 듭니다. CodeWhisperer는 15개의 프로그래밍 언어에 대한 추천을 할 수 있으며 일반적으로 아마존 기술과 관련된 코드 작성 시 경쟁보다 더 나은 성능을 보입니다. 그러나 Copilot는 FORTRAN과 같은 특정 언어를 포함한 보다 넓은 범위의 언어를 다루며, 일반적인 목적의 코딩 도우미로 설계되었습니다. CodeWhisperer에 대해 더 자세히 알아보려면 여기를 확인하세요.",
+                    "신경망이론은 2차원 이미지나 동영상에서 세계의 장면을 3D모델로 만드는 방법이다. 버클리대학교의 연구자들은 최근에 Instruct-NeRF2NeRF라는 기법을 발표했는데, 이 기법은 언어를 사용하여 3D장면을 편집하는 것이다. Instruct-NeRF2NeRF기능의 동작은 Stable Diffusion을 사용하여 이미지를 편집하는 기술인 InstructPix2Pix에 근거하고 있다. Instruct-NeRF2NeRF 프로젝트 페이지는 여기에 있다.",
+                    "이건 누구나 다양한 모습으로 보일 수 있게 해. 초기 탐험가에서 맨얼굴까지 유행하는 십대 데카당트 미인까지, 미니멀리스트에서 맥시멀리스트까지."
+                ]
+            }
+        ]
+
+    }
+]
