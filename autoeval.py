@@ -14,6 +14,7 @@ parser.add_argument('--task', type=str, default='Translation into Korean', help=
 parser.add_argument('--data', type=str, default='data_example.json', help='directory of your data file')
 parser.add_argument('--apikey', type=str, default=None, help = 'Your OpenAI API KEY')
 parser.add_argument('--organization', type=str, default=None, help='Your organization ID in OpenAI')
+parser.add_argument('--save', action='store_true', default=False, help='Whether you would save the outputs or not')
 args = parser.parse_args()
 
 openai.api_key = args.apikey
@@ -102,7 +103,9 @@ The detailed guideline for the scoring is the following:
 Let's say the score of Assistant 1 is 3, 2, 2 for {metrics_in_string}, respectively.
 Please first provide detailed explanations, specifying at which part of the example you think it is, avoiding any potential bias, and ensuring that the order in which the responses were presented does not affect your judgment. 
 Please provide one criteria per each paragraph and give the score to assistant 2 compared to the score of Assistant 1.
-At this time, evaluate the {metric_names[i]} score only. You may speak in English.""")
+At this time, evaluate the {metric_names[i]} score only. You may speak in English.
+Your response should be like 
+For {{metric}}, {{At which part is Assistant 2 better/worse than Assistant 1 in 3 sentences}}. Considering Assistant 1's score of {{score1(number)}} for {{metric}}, I would give Assistant 2 a score of {{score2(number)}}.""")
 
 ### 1-shot template of user-assistant pair 
 # just for showing the desirable template that we want to generate
@@ -119,7 +122,7 @@ user_template=f"""[Question]
 [System]
 {system_list[0]}"""
 
-assist_template = f"""For {metric_names[0]}, {{At which part does Assistant 2 cover more/less than Assistant 1 in 3 sentences}}."""
+assist_template = f"""For {metric_names[0]}, {{At which part is Assistant 2 better/worse than Assistant 1 in 3 sentences}}. Considering Assistant 1's score of 3 for {metric_names[0]}, I would give Assistant 2 a score of {{your_score}}."""
 
 # Gather the prompts in a list "prompts" by metrics -> examples -> models.
 # So in prompts, we have [Example1_metric1, Example1_metric2, Example2_metric1, Example2_metric2] if we have 2 examples and 2 metrics
@@ -165,15 +168,15 @@ def get_eval(message):
                 "https://api.openai.com/v1/chat/completions",
                 headers=headers,
                 data=json.dumps(data),
-                timeout=60,
+                timeout=120,
             )
             content = response.json()["choices"][0]["message"]["content"]
             print(content)
             return content
         except Exception as e:
-                logger.error(e)
+                print(e)
                 time.sleep(2)
-    logger.error(f'Failed after 2 retries.')
+    print(f'Failed after 4 retries.')
     return 'error'
 
 # Evaluate each metrics per each example for each model.
@@ -221,6 +224,13 @@ Total Score: {score1(number only)} + {score2(number only)} + {score3(number only
     total_score_value = float(total_score.group(1))
     scores.append(total_score_value)
 
+# Save the outputs if you want
+if args.save == True:
+    result_dict = []
+    for result_text, score in zip(results_per_ex, scores):
+        result_dict.append({"evaluation_text":result_text, "score":score})
+    with open(f"eval_results.json", 'w') as f:
+        json.dump(result_dict, f, ensure_ascii=False, indent=2)
 # Get the total average score per each model
 print("Scores:")
 for i, item in enumerate(data_ex[0]['model']):
