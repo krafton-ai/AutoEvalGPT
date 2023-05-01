@@ -10,7 +10,7 @@ import ray
 import time
 
 parser = argparse.ArgumentParser(description='My FastAPI app')
-parser.add_argument('--task', type=str, default='Translation into Korean', help='task description. If not typed, your data must contain the task description in \'task\' field')
+parser.add_argument('--task', type=str, default=None, help='task description. If not typed, your data must contain the task description in \'task\' field')
 parser.add_argument('--data', type=str, default='data_example.json', help='directory of your data file')
 parser.add_argument('--apikey', type=str, default=None, help = 'Your OpenAI API KEY')
 parser.add_argument('--organization', type=str, default=None, help='Your organization ID in OpenAI')
@@ -18,12 +18,18 @@ parser.add_argument('--save', action='store_true', default=False, help='Whether 
 args = parser.parse_args()
 
 openai.api_key = args.apikey
-openai.organization = args.organization
-headers = {
-    "Content-Type": "application/json",
-    "Authorization": f"Bearer {openai.api_key}",
-    "OpenAI-Organization": openai.organization
-}
+if args.organization is not None:
+    openai.organization = args.organization
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {openai.api_key}",
+        "OpenAI-Organization": openai.organization
+    }
+else:
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {openai.api_key}",
+    }
 
 
 
@@ -179,15 +185,17 @@ def get_eval(message):
     print(f'Failed after 4 retries.')
     return 'error'
 
-# Evaluate each metrics per each example for each model.
+# 1. Evaluate each metric per each example for each model.
 results = []
 for i in range(0, len(prompts), num_workers): # Batching. num_workers = num_batch in this code
+
     messages = []
     for j in range(min(num_workers, len(prompts)-i) ):
         messages.append( [{"role":"user", "content":user_template}, 
         {"role":"assistant", "content":assist_template}, 
         {"role":"user", "content":prompts[i+j]}])
-     # Call the api_call function remotely for each example in the batch
+    
+    # Call the api_call function remotely for each example in the batch
     futures = [get_eval.remote(message) for message in messages]
 
     # Wait for the results to be ready
@@ -201,7 +209,7 @@ for i in range(0, len(prompts), num_workers): # Batching. num_workers = num_batc
     print(f'Waiting for 2 seconds before sending the next request.')
     time.sleep(2)
 
-# Gather the result texts per each example
+# 2. Gather the result texts per each example
 print("Gathering the result texts")
 results_per_ex = []
 for i in range(0, len(results), len(metric_names)):
@@ -210,11 +218,11 @@ for i in range(0, len(results), len(metric_names)):
         results_example += (item+"\n")
     results_per_ex.append(results_example)
 
-# Get the scores per each example
+# 3. Get the numeric scores from the texts
 print("Extracting the Scores per each example")
 scores=[]
 total_score_pattern = r'Total Score:.+=\s*([\d.]+)'
-for item in results_per_ex:
+for item in results_per_ex:  # TODO: Batch
     message = [{"role":"user", "content": item + """\nSo in total, What's the total score of Assistant 2? Your response should be like 
 Total Score: {score1(number only)} + {score2(number only)} + {score3(number only)} = {total_score (number only)}"""}]
     futures = get_eval.remote(message)
@@ -224,14 +232,15 @@ Total Score: {score1(number only)} + {score2(number only)} + {score3(number only
     total_score_value = float(total_score.group(1))
     scores.append(total_score_value)
 
-# Save the outputs if you want
+# 3-1. Save the outputs if you want (Evaluation CoT texts, and the corresponding scores)
 if args.save == True:
     result_dict = []
     for result_text, score in zip(results_per_ex, scores):
         result_dict.append({"evaluation_text":result_text, "score":score})
     with open(f"eval_results.json", 'w') as f:
         json.dump(result_dict, f, ensure_ascii=False, indent=2)
-# Get the total average score per each model
+
+# 4. Get the total average score per each model
 print("Scores:")
 for i, item in enumerate(data_ex[0]['model']):
     model_score = np.mean(scores[len(item['outputs'])*i:len(item['outputs'])*(i+1)])
