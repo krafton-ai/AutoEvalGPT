@@ -50,3 +50,7 @@ Koalpaca-13B: 6.7
 ## Alert
 **Scoring higher than 7.0 compared to GPT-4 doesn't always mean the model is better than GPT-4.**  
 Sometimes, Assistant 2 gets a higher score even when the results from Assistant 1 and 2 are quite similar, and there's no clear reason why. If you want to find out if it's truly better than GPT-4, you should check permutation invariance. In simple terms, just swap the positions of Assistant 1 and 2, run the same test, and see if you still get the same result (your model being better than GPT-4).
+
+## LICENSE
+The code is released under the Apache-2.0 License. See `LICENSE` for full terms.
+The generated data is subject to [Terms of Use](https://openai.com/policies/terms-of-use) of OpenAI.
