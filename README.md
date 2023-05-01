@@ -22,17 +22,34 @@ At this time, evaluate the {metrics[k]} score only. You may speak in English.
 You may adjust the score distribution of Assistant 1.
 
 ## How can we use this?
+1. Clone the git repository, and go to AutoEvalGPT
 ```bash
-python autoeval.py --data data_example.json --save
+git clone https://github.com/krafton-ai/AutoEvalGPT.git
+cd AutoEvalGPT
 ```
-You will receive the result in the terminal. If you set `--save`, you will obtain an `eval_results.json` file in your directory, which includes the rationale for the evaluation and the total score of each example (not each model).
+2. If your data is ready, run the `autoeval.py` like below
+```bash
+python autoeval.py --data data_example.json --save --apikey YOUR_OPENAI_API_KEY --organization YOUR_ORGANIZATION_ID
+```
+Then, you will receive the result in the terminal. 
+
+## Commands 
+### Mandatory
+`--data` (str): The directory to your data for evaluation. Please check the data format in `data_example.json` and customize this for your own data.  
+`--apikey` (str): your OPENAI api key for using GPT-4. If you don't have access to GPT-4, please change the model to GPT-3.5 in `autoeval.py` even though the result will be sub-optimal.  
+
+### Optional
+`--save` (void): Once you type `--save`, `args.save` is set to True. You will obtain an `eval_results.json` file in your directory, which includes the rationale for the evaluation and the total score of each example (not each model).  
+`--organization` (str): Organization ID is only for who needs this ID.  
+`--task` (str): The short task description of your dataset for evaluation. This is not mandatory once you have task description in your data.
 
 ## What is different from Vicuna's Auto-evaluation?
 1. GPT-4 also generates "Metrics"
 2. Evaluate each metric individually. (Not sequentially by one POST requests)
-3. Set Assistant 1 to GPT-4, and fix the score at 7 (3, 2, 2) as well.
-    1. In `autoeval.py`, you may modify the prompt for custom metrics and adjust the score distribution.
-    2. However, in this repository, all tasks are performed by GPT-4.
+3. Set Assistant 1 to GPT-4, and fix the score at specific point as well.
+    1. For example, you would assign 7 points to GPT-4 and distribute the scores as 3, 2, 2 for metrics 1, 2, and 3, respectively.
+    2. In `autoeval.py`, you may modify the prompt for custom metrics and adjust the score distribution.
+4. Set Assistant 2 to your model and evaluate.
 
 ## Output
 ### Translation
