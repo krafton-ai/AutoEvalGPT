@@ -5,6 +5,14 @@
 
 Inspired by [Vicuna](https://vicuna.lmsys.org/) from lm-sys, we modified their prompts to be more robust and permutation invariable. 
 
+## What is different from Vicuna's Auto-evaluation?
+1. GPT-4 also generates "Metrics"
+2. Evaluate each metric individually. (Not sequentially by one POST requests)
+3. Set Assistant 1 to GPT-4, and fix the score at specific point as well.
+    1. For example, you would assign 7 points to GPT-4 and distribute the scores as 3, 2, 2 for metrics 1, 2, and 3, respectively.
+    2. In `autoeval.py`, you may modify the prompt for custom metrics and adjust the score distribution.
+4. Set Assistant 2 to your model and evaluate.
+
 ## Prompt Format
 ```
 {Task Description}
@@ -43,13 +51,6 @@ Then, you will receive the result in the terminal.
 `--organization` (str): Organization ID is only for who needs this ID.  
 `--task` (str): The short task description of your dataset for evaluation. This is not mandatory once you have task description in your data.
 
-## What is different from Vicuna's Auto-evaluation?
-1. GPT-4 also generates "Metrics"
-2. Evaluate each metric individually. (Not sequentially by one POST requests)
-3. Set Assistant 1 to GPT-4, and fix the score at specific point as well.
-    1. For example, you would assign 7 points to GPT-4 and distribute the scores as 3, 2, 2 for metrics 1, 2, and 3, respectively.
-    2. In `autoeval.py`, you may modify the prompt for custom metrics and adjust the score distribution.
-4. Set Assistant 2 to your model and evaluate.
 
 ## Output
 ### Translation
