@@ -47,7 +47,7 @@ Then, you will receive the result in the terminal.
 `--apikey` (str): your OPENAI api key for using GPT-4. If you don't have access to GPT-4, please change the model to GPT-3.5 in `autoeval.py` even though the result will be sub-optimal.  
 
 ### Optional
-`--save` (void): Once you type `--save`, `args.save` is set to True. You will obtain an `eval_results.json` file in your directory, which includes the rationale for the evaluation and the total score of each example (not each model).  
+`--save` (void): Once you type `--save`, you will obtain an `eval_results.json` file in your directory, which includes the rationale for the evaluation and the total score of each example (not each model).
 `--organization` (str): Organization ID of OpenAI if you have one.  
 `--task` (str): The short task description of your dataset for evaluation. This is not mandatory once you have task description in your data.
 
