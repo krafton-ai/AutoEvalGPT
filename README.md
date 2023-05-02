@@ -7,7 +7,7 @@ Inspired by [Vicuna](https://vicuna.lmsys.org/) from lm-sys, we modified their p
 
 ## What is different from Vicuna's Auto-evaluation?
 1. GPT-4 also generates "Metrics"
-2. Evaluate each metric individually. (Not sequentially by one POST requests)
+2. Evaluate each metric individually. (Not all metrics at single generation)
 3. Set Assistant 1 to GPT-4, and fix the score at specific point as well.
     1. For example, you would assign 7 points to GPT-4 and distribute the scores as 3, 2, 2 for metrics 1, 2, and 3, respectively.
     2. In `autoeval.py`, you may modify the prompt for custom metrics and adjust the score distribution.
@@ -48,7 +48,7 @@ Then, you will receive the result in the terminal.
 
 ### Optional
 `--save` (void): Once you type `--save`, `args.save` is set to True. You will obtain an `eval_results.json` file in your directory, which includes the rationale for the evaluation and the total score of each example (not each model).  
-`--organization` (str): Organization ID is only for who needs this ID.  
+`--organization` (str): Organization ID of OpenAI if you have one.  
 `--task` (str): The short task description of your dataset for evaluation. This is not mandatory once you have task description in your data.
 
 
