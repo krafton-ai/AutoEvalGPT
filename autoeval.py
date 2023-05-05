@@ -1,13 +1,13 @@
-import torch
 import numpy as np
 import re
-from transformers import AutoTokenizer, DPRQuestionEncoder, DPRContextEncoder
 from typing import List
 import argparse
 import openai
 import requests, json
 import ray
 import time
+# from transformers import AutoTokenizer, DPRQuestionEncoder, DPRContextEncoder
+# import torch
 
 parser = argparse.ArgumentParser(description='My FastAPI app')
 parser.add_argument('--task', type=str, default=None, help='task description. If not typed, your data must contain the task description in \'task\' field')

@@ -30,10 +30,14 @@ At this time, evaluate the {metrics[k]} score only. You may speak in English.
 You may adjust the score distribution of Assistant 1.
 
 ## How can we use this?
-1. Clone the git repository, and go to AutoEvalGPT
+0. Clone the git repository, and go to AutoEvalGPT
 ```bash
 git clone https://github.com/krafton-ai/AutoEvalGPT.git
 cd AutoEvalGPT
+```
+1. Install dependencies
+```bash
+pip install -r requirements.txt
 ```
 2. If your data is ready, run the `autoeval.py` like below
 ```bash
@@ -64,8 +68,8 @@ Korani-v2: 5.4
 Korani-v1: 7.9
 Koalpaca-13B: 6.7
 ```
-```
-input = ""Hey! I have some Kissflow Legal Review requests that are blocked by Tax and Accounting, can this be looked at?""
+```python
+input = """Hey! I have some Kissflow Legal Review requests that are blocked by Tax and Accounting, can this be looked at?"""
 ```
 | Model | Score (averaged over 5 examples) | Output Example |
 | --- | :---: | ---: | 
@@ -79,8 +83,8 @@ input = ""Hey! I have some Kissflow Legal Review requests that are blocked by Ta
 | KORani-v3 | 7.1 | 안녕하세요! 저는 Kissflow Legal Review 요청이 세금과 회계에 의해 차단되고 있는데, 이 문제가 살펴볼 수 있을까요? |
 
 ### QA(Korean)
-```
-prompt = "우리는 아래와 같은 정보를 갖고 있습니다.
+```python
+PROMPT = """우리는 아래와 같은 정보를 갖고 있습니다.
 ---------------------
 헨리 구스타프 몰래슨(영어: Henry Gustav Molaison, 1926년 2월 26일 ~ 2008년 12월 2일)은 뇌전증을 치료하기 위해서 수술적으로 해마를 포함한 내측측두엽이 제거된 미국의 기억장애 환자 H.M으로 전부터 이미 알려져 있었다. 
 그는 1957년 말부터 그가 죽을 때 까지 그는 광범위하게 연구가 되었다. 그의 경우는 뇌 기능과 기억 사이의 링크를 설명하는 이론 발달과 뇌인지심리학의 발달, 뇌의 구조와 기능이 특정 심리적 과정과 관한 이해를 목표로 하는 심리학의 한 지점에 매우 중요한 역할을 하였다. 
@@ -88,7 +92,7 @@ prompt = "우리는 아래와 같은 정보를 갖고 있습니다.
 그의 뇌는 지금 2009년 12월 4일에 조직학적으로 슬라이스되어 미국 샌디에이고에 있다.
 ---------------------
 ### 주어진 정보에 따라, 질문에 답해주세요.: '헨리 구스타프의 뇌는 현재 어디에 위치해 있는가?'
-### Assistant:"
+### Assistant:"""
 ```
 | Model | Score (averaged over 5 examples) | Output Example |
 | --- | :---: | ---: | 
@@ -101,8 +105,8 @@ prompt = "우리는 아래와 같은 정보를 갖고 있습니다.
 | KORani-v3 | 6.4 | 헨리 구스타프의 뇌는 현재 코네티컷 주 윈저 락스에 있는 관리 기관에 있습니다. |
 
 ### Summarization (Korean)
-```
-prompt = "# Document
+```python
+PROMPT = """# Document
 전년도 대비 79명 늘어 1019명, 행정수요 대처 광양시의 공무원 정원이 크게 늘어나 행정서비스 향상이 기대된다. 
 시는 행정안전부에서 발표한 2018년도 자치단체 기준인건비에서 광양시의 일반직 정원이 지난해보다 79명이 늘어난 1019명으로 산정됐다고 밝혔다. 
 지난 1995년 도농통합 당시 991명이었던 광양시 공무원 정원은 IMF시절에 혹독한 구조조정을 거치면서 2002년에는 788명으로 200여명이 가까이 줄어들었으나 이번 정원 확보로 공무원 정원 1000명 시대를 맞게 됐다. 
@@ -112,7 +116,7 @@ prompt = "# Document
 정홍기 총무과장은“참으로 어렵게 가져온 공무원 정원과 4급 상설기구는 격무에 시달려온 직원들의 숨통을 트이게 해 15만 시민을 위한 행정서비스 질을 향상시킬 것으로 기대된다”며“이달 안에 정원 조례를 개정하고, 직무분석을 통해 부서별 정원을 조정할 계획이다”고 말했다.
 
 한국어 3문장으로 위의 Document를 요약해줘.
-### Assistant: 1)"
+### Assistant: 1)"""
 ```
 | Model | Score (averaged over 5 examples) | Output Example |
 | --- | :---: | ---: | 
