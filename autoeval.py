@@ -170,6 +170,7 @@ def get_eval(message):
             "stop": ["\n\n", "\nFor"]
         }
         try:
+            response = None
             response = requests.post(
                 "https://api.openai.com/v1/chat/completions",
                 headers=headers,
@@ -180,8 +181,12 @@ def get_eval(message):
             print(content)
             return content
         except Exception as e:
-                print(e)
-                time.sleep(2)
+            if response is not None:
+                print(response.json())
+                if 'Rate limit' in response.json()['error']['message'] :
+                    time.sleep(60)
+            print(e)
+            time.sleep(2)
     print(f'Failed after 4 retries.')
     return 'error'
 
